@@ -1,0 +1,6 @@
+baseURL = 'https://stevenzack.github.io/'
+languageCode = 'en-us'
+title = 'Yuhao Zhou Blog'
+
+theme = "hugo-theme-cleanwhite"
+publishDir = "docs"
