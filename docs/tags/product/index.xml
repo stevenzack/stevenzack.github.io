@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Yuhao Zhou Blog</title>
-    <link>https://stevenzack.github.io/post/</link>
-    <description>Recent content in Posts on Yuhao Zhou Blog</description>
+    <title>Product on Yuhao Zhou Blog</title>
+    <link>https://stevenzack.github.io/tags/product/</link>
+    <description>Recent content in Product on Yuhao Zhou Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Oct 2023 11:31:19 +0300</lastBuildDate><atom:link href="https://stevenzack.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Oct 2023 11:31:19 +0300</lastBuildDate><atom:link href="https://stevenzack.github.io/tags/product/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>To Make a Product</title>
       <link>https://stevenzack.github.io/post/to-make-a-product/</link>
@@ -24,15 +24,6 @@ Architect
 Developer
 Marketing
 Operator/Analytics</description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>https://stevenzack.github.io/post/welcome/</link>
-      <pubDate>Thu, 12 Oct 2023 11:30:13 +0300</pubDate>
-      
-      <guid>https://stevenzack.github.io/post/welcome/</guid>
-      <description>Welcome to my blog </description>
     </item>
     
   </channel>

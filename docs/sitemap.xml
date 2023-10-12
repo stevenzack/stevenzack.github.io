@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://stevenzack.github.io/post/</loc>
-    <lastmod>2023-10-12T11:30:13+03:00</lastmod>
+    <loc>https://stevenzack.github.io/categories/</loc>
+    <lastmod>2023-10-12T11:31:19+03:00</lastmod>
   </url><url>
-    <loc>https://stevenzack.github.io/post/welcome/</loc>
-    <lastmod>2023-10-12T11:30:13+03:00</lastmod>
+    <loc>https://stevenzack.github.io/post/</loc>
+    <lastmod>2023-10-12T11:31:19+03:00</lastmod>
+  </url><url>
+    <loc>https://stevenzack.github.io/tags/product/</loc>
+    <lastmod>2023-10-12T11:31:19+03:00</lastmod>
+  </url><url>
+    <loc>https://stevenzack.github.io/categories/product/</loc>
+    <lastmod>2023-10-12T11:31:19+03:00</lastmod>
+  </url><url>
+    <loc>https://stevenzack.github.io/tags/</loc>
+    <lastmod>2023-10-12T11:31:19+03:00</lastmod>
+  </url><url>
+    <loc>https://stevenzack.github.io/post/to-make-a-product/</loc>
+    <lastmod>2023-10-12T11:31:19+03:00</lastmod>
   </url><url>
     <loc>https://stevenzack.github.io/</loc>
+    <lastmod>2023-10-12T11:31:19+03:00</lastmod>
+  </url><url>
+    <loc>https://stevenzack.github.io/post/welcome/</loc>
     <lastmod>2023-10-12T11:30:13+03:00</lastmod>
   </url><url>
     <loc>https://stevenzack.github.io/about/</loc>
@@ -17,12 +32,8 @@
   </url><url>
     <loc>https://stevenzack.github.io/search/placeholder/</loc>
   </url><url>
-    <loc>https://stevenzack.github.io/categories/</loc>
-  </url><url>
     <loc>https://stevenzack.github.io/archive/</loc>
   </url><url>
     <loc>https://stevenzack.github.io/search/</loc>
-  </url><url>
-    <loc>https://stevenzack.github.io/tags/</loc>
   </url>
 </urlset>
