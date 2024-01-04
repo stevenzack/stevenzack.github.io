@@ -6,9 +6,9 @@ class MarkdownConverter {
     private processors: MarkdownProcessor[];
     constructor() {
         this.processors = [
-            this.createHeadProcessor('# ', 'h3'),
-            this.createHeadProcessor('## ', 'h3'),
-            this.createHeadProcessor('### ', 'h4'),
+            this.createHeadProcessor('# ', 'h4'),
+            this.createHeadProcessor('## ', 'h5'),
+            this.createHeadProcessor('### ', 'h5'),
             this.createHeadProcessor('#### ', 'h5'),
             this.createMediaProcessor(),
         ];
@@ -24,7 +24,7 @@ class MarkdownConverter {
                 s = subBefore(s, ')', s);
                 let mime=toMimeType(s);
                 if(mime.startsWith('image/')){
-                    return `<img src="${s}" load="lazy" width="80%" style="max-width:700px;" alt="${alt}"/>`;
+                    return `<img src="${s}" load="lazy" width="80%" style="max-width:700px;" alt="${alt}"/> <figcaption>${alt}</figcaption>`;
                 }
                 if(mime.startsWith('audio/')){
                     return `<audio src="${s}" controls/>`
@@ -93,10 +93,16 @@ class MarkdownConverter {
         let lines = content.split('\n');
         let renderred = '';
         for (let line of lines) {
+            if(!line){
+                continue;
+            }
             for (let pro of this.processors) {
                 if (pro.check(line)) {
                     line = pro.parse(line);
                 }
+            }
+            if (!line){
+                continue;
             }
             renderred += `<p>${line}</p>` + '\n';
         }

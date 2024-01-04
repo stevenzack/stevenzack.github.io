@@ -29,7 +29,22 @@
           {/each}
         </div>
         <br />
-        <h3>{data.title}</h3>
+        <h3 style="text-align: center;">{data.title}</h3>
+        <div class="c">
+          {#if data.publishTime}
+          <small>
+            {getStr(StrIds.time)} :
+            {data.publishTime}
+          </small>
+        {/if}
+        {#if data.author}
+          <small>
+            {getStr(StrIds.author)} :
+            {data.author}
+          </small>
+        {/if}
+        </div>
+        <hr>
         <div>
           {@html data.content.replaceAll("<img ", '<img width="90%" ')}
         </div>
@@ -65,9 +80,3 @@
   </div>
 </div>
 
-<style>
-  a:hover {
-    color: #f74135;
-    text-decoration: underline;
-  }
-</style>
