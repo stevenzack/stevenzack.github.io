@@ -2,35 +2,55 @@
   import "$lib/leafapp.css";
 </script>
 
-<!-- <h5 class="brand">Steven's Blog</h5> -->
-<ul role="menubar" class="w">
-  <li class="r p">
-    <img class="mr" src="https://avatars.githubusercontent.com/u/18564615?v=4" alt="avatar" width="12" height="12">
-    <b>Steven's Blog</b>
-  </li>
-  <li role="menuitem" tabindex="0">File</li>
-  <li role="menuitem" tabindex="0">Edit</li>
-  <li role="menuitem" tabindex="0">View</li>
-  <li role="menuitem" tabindex="0">
-    Eng/文
-    <ul role="menu">
-      <li role="menuitem">
-        <a href="/"> English </a>
-      </li>
-      <li role="menuitem">
-        <a href="#"> 中文 </a>
-      </li>
-    </ul>
-  </li>
-</ul>
-<div class="c">
-  <div class="cs w maxwmd">
-    <slot />
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="#" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Title</a>
+      <div class="nav-collapse collapse navbar-responsive-collapse">
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-search pull-left" action="">
+          <input type="text" class="search-query span2" placeholder="Search" />
+        </form>
+        <ul class="nav pull-right">
+          <li><a href="#">Link</a></li>
+          <li class="divider-vertical"></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.nav-collapse -->
+    </div>
   </div>
+  <!-- /navbar-inner -->
 </div>
 
-<style>
-  .brand {
-    font-size: 24px;
-  }
-</style>
+<slot />

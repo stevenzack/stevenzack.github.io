@@ -6,10 +6,10 @@ class MarkdownConverter {
     private processors: MarkdownProcessor[];
     constructor() {
         this.processors = [
-            this.createHeadProcessor('# ', 'h1'),
-            this.createHeadProcessor('## ', 'h2'),
-            this.createHeadProcessor('### ', 'h3'),
-            this.createHeadProcessor('#### ', 'h4'),
+            this.createHeadProcessor('# ', 'h3'),
+            this.createHeadProcessor('## ', 'h3'),
+            this.createHeadProcessor('### ', 'h4'),
+            this.createHeadProcessor('#### ', 'h5'),
             this.createMediaProcessor(),
         ];
     }
