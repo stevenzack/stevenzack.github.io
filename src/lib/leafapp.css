@@ -301,13 +301,13 @@ a:hover {
 
 @media screen and (max-width:980px) {
     .mobilehide {
-        display: none
+        display: none !important
     }
 }
 
 @media screen and (min-width:980px) {
     .desktophide {
-        display: none
+        display: none !important
     }
 }
 

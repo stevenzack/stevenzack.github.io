@@ -9,8 +9,8 @@
   <div class="navbar-inner">
     <div class="container">
       <a class="brand" href="/">
-        <img src="https://avatars.githubusercontent.com/u/18564615?v=4" alt="logo" width="24" height="24" style="margin-right: 6px;"/>
-        {getStr(StrIds.appName)}
+        <img src="https://avatars.githubusercontent.com/u/18564615?v=4" alt="logo" width="24" height="24"/>
+        <span class="mobilehide" style="margin-left: 6px;">{getStr(StrIds.appName)}</span>
       </a>
       <div class="nav-collapse collapse navbar-responsive-collapse">
         <ul class="nav">
@@ -30,7 +30,7 @@
         <form class="navbar-search pull-left" action="">
           <input type="text" class="search-query span2" placeholder={getStr(StrIds.searchArticles)} />
         </form>
-        <ul class="nav pull-right">
+        <ul class="nav pull-right mobilehide">
           <li><a href={getRoute('/about')}>{getStr(StrIds.about)}</a></li>
           <li class="divider-vertical"></li>
           <li class="dropdown">
