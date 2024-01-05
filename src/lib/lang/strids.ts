@@ -4,5 +4,8 @@
         home,
         time,
         author,
+        columns,
+        about,
+        searchArticles,
     }
 export default StrIds; 

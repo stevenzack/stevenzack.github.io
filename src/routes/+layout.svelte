@@ -1,23 +1,21 @@
 <script lang="ts">
+    import { getStr } from "$lib/lang/lang";
+    import StrIds from "$lib/lang/strids";
   import "$lib/leafapp.css";
+    import { getRoute } from "$lib/toolkit/route";
 </script>
 
-<div class="navbar">
+<div class={typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "navbar-inverse navbar" : "navbar "}>
   <div class="navbar-inner">
     <div class="container">
-      <a href="#" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <a class="brand" href="/">
+        <img src="https://avatars.githubusercontent.com/u/18564615?v=4" alt="logo" width="24" height="24" style="margin-right: 6px;"/>
+        {getStr(StrIds.appName)}
       </a>
-      <a class="brand" href="#">Title</a>
       <div class="nav-collapse collapse navbar-responsive-collapse">
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{getStr(StrIds.columns)} <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -30,13 +28,13 @@
           </li>
         </ul>
         <form class="navbar-search pull-left" action="">
-          <input type="text" class="search-query span2" placeholder="Search" />
+          <input type="text" class="search-query span2" placeholder={getStr(StrIds.searchArticles)} />
         </form>
         <ul class="nav pull-right">
-          <li><a href="#">Link</a></li>
+          <li><a href={getRoute('/about')}>{getStr(StrIds.about)}</a></li>
           <li class="divider-vertical"></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Eng/文 <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>

@@ -6,7 +6,7 @@ body {
 .c {
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
 }
 
 .cs {
@@ -14,9 +14,11 @@ body {
     flex-direction: column;
     align-items: flex-start
 }
-.a{
+
+.a {
     cursor: pointer;
 }
+
 .ce {
     display: flex;
     flex-direction: column;
@@ -32,9 +34,11 @@ body {
 .red {
     color: red
 }
-a:hover{
+
+a:hover {
     color: red;
 }
+
 .black {
     color: #000
 }
@@ -81,6 +85,7 @@ a:hover{
     align-items: center;
     justify-content: space-around
 }
+
 .shadow {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / .3), 0 1px 2px -1px rgb(0 0 0 / .3)
 }
@@ -101,6 +106,7 @@ a:hover{
     padding-left: 8px !important;
     padding-right: 8px !important
 }
+
 .px2 {
     padding-left: 16px !important;
     padding-right: 16px !important
@@ -172,10 +178,12 @@ a:hover{
 .maxw {
     max-width: 1100px;
 }
-.maxwsm{
+
+.maxwsm {
     max-width: 780px;
 }
-.maxwmd{
+
+.maxwmd {
     max-width: 860px;
 }
 
@@ -184,7 +192,7 @@ a:hover{
 }
 
 .car {
-    display:inline-block;
+    display: inline-block;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / .3), 0 1px 2px -1px rgb(0 0 0 / .3);
     border-radius: 4px;
     padding: 16px
@@ -343,4 +351,19 @@ a:hover{
     align-items: flex-start;
     justify-content: space-around;
     color: #fff
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+        color: #ddd;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #eee;
+        color: rgb(44, 44, 44);
+    }
 }

@@ -29,7 +29,7 @@
           {/each}
         </div>
         <br />
-        <h3 style="text-align: center;">{data.title}</h3>
+        <h3 style='text-align: center;font-family: "Lucida Console", "Courier New", monospace;'>{data.title}</h3>
         <div class="c">
           {#if data.publishTime}
           <small>

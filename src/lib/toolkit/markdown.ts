@@ -24,7 +24,7 @@ class MarkdownConverter {
                 s = subBefore(s, ')', s);
                 let mime=toMimeType(s);
                 if(mime.startsWith('image/')){
-                    return `<img src="${s}" load="lazy" width="80%" style="max-width:700px;" alt="${alt}"/> <figcaption>${alt}</figcaption>`;
+                    return `<img src="${s}" load="lazy" width="80%" style="max-width:700px;" alt="${alt}"/> <figcaption style='font-style: italic;'>${alt}</figcaption>`;
                 }
                 if(mime.startsWith('audio/')){
                     return `<audio src="${s}" controls/>`
