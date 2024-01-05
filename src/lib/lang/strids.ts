@@ -1,5 +1,6 @@
     enum StrIds {
         appName = 1,
+        stevenzack,
         recommendedArticle,
         home,
         time,
@@ -7,5 +8,7 @@
         columns,
         about,
         searchArticles,
+        email,
+        contact,
     }
 export default StrIds; 
