@@ -6,10 +6,14 @@ class MarkdownConverter {
     private processors: MarkdownProcessor[];
     constructor() {
         this.processors = [
-            this.createHeadProcessor('# ', 'h4'),
-            this.createHeadProcessor('## ', 'h5'),
-            this.createHeadProcessor('### ', 'h5'),
-            this.createHeadProcessor('#### ', 'h5'),
+            this.createPrefix('# ', 'h4'),
+            this.createPrefix('## ', 'h5'),
+            this.createPrefix('### ', 'h5'),
+            this.createPrefix('#### ', 'h5'),
+            this.createPrefix('---', 'hr'),
+            this.createPrefix('- ', 'li'),
+            this.createPrefix('    - ', 'li', 'style="margin-left:18px;"'),
+            this.createPrefix('    ', 'mark', 'style="padding-left:18px;"'),
             this.createMediaProcessor(),
         ];
     }
@@ -18,30 +22,31 @@ class MarkdownConverter {
         return {
             check: s => s.startsWith('!['),
             parse: s => {
-                let alt=subBefore(s,'](','');
-                alt=subAfter(alt,'![',alt);
+                let alt = subBefore(s, '](', '');
+                alt = subAfter(alt, '![', alt);
                 s = subAfter(s, '](', '');
                 s = subBefore(s, ')', s);
-                let mime=toMimeType(s);
-                if(mime.startsWith('image/')){
+                let mime = toMimeType(s);
+                if (mime.startsWith('image/')) {
                     return `<img src="${s}" load="lazy" width="80%" style="max-width:700px;" alt="${alt}"/> <figcaption style='font-style: italic;'>${alt}</figcaption>`;
                 }
-                if(mime.startsWith('audio/')){
+                if (mime.startsWith('audio/')) {
                     return `<audio src="${s}" controls/>`
                 }
-                if(mime.startsWith('video/')){
+                if (mime.startsWith('video/')) {
                     return `<video src="${s}" controls preload="none" loop style="max-height:700px;max-width:700px"/>`
                 }
                 return s;
             }
         }
     }
-    private createHeadProcessor(prefix: string, elemTag: string): MarkdownProcessor {
+    private createPrefix(prefix: string, elemTag: string, attr?: string): MarkdownProcessor {
         return {
             check: s => s.startsWith(prefix),
             parse: s => {
                 s = trimStart(s, prefix);
-                return `<${elemTag}>${s}</${elemTag}>`;
+                s = s.trim();
+                return `<${elemTag} ${attr ? attr : ''}>${s}</${elemTag}>`;
                 // return `<a class="plainlink" href="#${encodeURIComponent(s)}"><${elemTag}>${s}</${elemTag}></a>`;
             }
         };
@@ -92,16 +97,33 @@ class MarkdownConverter {
 
         let lines = content.split('\n');
         let renderred = '';
+        let lastLineIsEmpty = false;
         for (let line of lines) {
-            if(!line){
+            if (!line) {
+                if (lastLineIsEmpty && !renderred.endsWith('<br/>\n')) {
+                    renderred += '<br/>\n';
+                }
+                lastLineIsEmpty = true;
                 continue;
             }
+            lastLineIsEmpty = false;
+            let isTitleLine = line.startsWith('#');
+
+            let wrapped = false
             for (let pro of this.processors) {
                 if (pro.check(line)) {
+                    wrapped = true;
                     line = pro.parse(line);
                 }
             }
-            if (!line){
+            if (!line) {
+                continue;
+            }
+            if (wrapped) {
+                if (isTitleLine && !renderred.endsWith('<br/>\n')) {
+                    renderred += '<br/>\n';
+                }
+                renderred += line + '\n';
                 continue;
             }
             renderred += `<p>${line}</p>` + '\n';
