@@ -10,23 +10,22 @@ main topics
 - Containerization
 - Communication: gRPC, Kafka
 - DevOps
-- Minotoring: Prometheus, Istio service mesh
+- Monitoring: Prometheus, Istio service mesh
 
 # DevOps
 
 read list: https://learn.microsoft.com/zh-cn/azure/architecture/guide/devops/devops-start-here
 
-# Description of thesis content, objectives and outcomes.
-A detailed description of thesis contents, objectives and planned concrete outcomes. In diary theses, description of key work tasks.
+[ Content ] : 
+1. What we are going to build. A backend system that serves a online mind-mapping creative website, with around 2k daily active users. The old backend system is written in a monolith repository in Golang. As time goes by, the code base is getting larger and larger. So we want to separate the monolith repository into different small microservices. For better scalability and observability in the future, we're considering migrate the server into a containerized environment, and see the outcome. 
+2. Challenges. The databases and storage data are tightly coupled. Need more test to make sure the API behavior stays the same. 
+3. Solutions. Containerization we use Docker, for communication between microservices we use HTTP. For service mesh we use Istio, for monitoring we use Prometheus and grafana.
 
-# Description of the significance and utilisation of the thesis results.
-Description of who has the need for the thesis, for what purpose and the practical benefits of the outcomes.
+[ Objectives ] : 
+1. Migrating a Monolithic backend repository into a 6-services Microservice architecture system. 
+2. Trace and monitor all the traffic between each microservices. Notify the developers when error happens. 
+3. Integrating DevOps for all the backend and frontend code bases. 
 
-# Planned tools
-Equipment, software, etc.
-
-# Planned working approaches
-Methods, working approach, etc.
-
-# Student’s readiness to implement suggested thesis.
-Professional specialisation courses supporting the thesis completed prior to starting the thesis. Other studies or work experience supporting the thesis.
+[ Outcomes ] : 
+1. 6 separated small microservices that can be deployed independently to a Kubernetes cluster, cloud native. 
+2. Full DevOps pipeline for all the code, automatically pull, test and release.
