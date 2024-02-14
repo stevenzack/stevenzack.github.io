@@ -235,8 +235,8 @@ export async function loadMarkdownDir(dir: string): Promise<MarkdownArticle[]> {
         if (info.isDirectory()) {
             let children = await loadMarkdownDir(dst);
             out.push({
-                id: id,
-                title: id,
+                id: id+'/',
+                title: id+'/',
                 cover: '',
                 keywords: [],
                 from: '',

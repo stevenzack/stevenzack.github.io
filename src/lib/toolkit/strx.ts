@@ -66,6 +66,7 @@ export function toMimeType(s: string): string {
         case "csv":
         case "htm":
         case "xml": return "text/" + ext;
+        case 'avif':
         case "jpeg":
         case "png":
         case "jpg":

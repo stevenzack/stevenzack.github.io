@@ -11,13 +11,11 @@
     <hr />
     <ol>
       {#each data.articles as v}
-        {#if v.children.length === 0}
           <li>
             <a href={getRoute("/a/" + v.title)}>
               {v.title}
             </a>
           </li>
-        {/if}
       {/each}
     </ol>
   </div>
